@@ -17,6 +17,15 @@ class UsersController < ApplicationController
   	@user = User.find(uid)
   end
 
+  def destroy
+  	uid = params[:id]
+  	if current_user.is_admin? || 
+  		current_user.id = uid
+	  	@user = User.find(uid)
+	  	@user.destroy
+  	end
+  end
+
   private
   	def user_params
   		params.require(:user).permit(:name,
