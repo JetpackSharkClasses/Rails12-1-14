@@ -1,0 +1,5 @@
+<!-- _micropost_form.html.erb -->
+<%= form_for(@micropost) do |f| %>
+	<%= f.text_area :content %>
+	<%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>

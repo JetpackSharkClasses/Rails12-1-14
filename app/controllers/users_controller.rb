@@ -15,6 +15,8 @@ class UsersController < ApplicationController
   def show
   	uid = params[:id]
   	@user = User.find(uid)
+    @microposts = @user.microposts
+    @micropost = @user.microposts.build
   end
 
   def destroy
